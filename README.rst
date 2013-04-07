@@ -16,4 +16,4 @@ Contributing
 3. Write test(s) for any new feature
 4. Push your changes and send a pull request
 
-.. _`the repository`: http://github.com/yaph/geonamescache
+.. _`the repository`: http://github.com/yaph/breq

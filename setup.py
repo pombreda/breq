@@ -16,7 +16,7 @@ setup(
     license='MIT',
     author='Ramiro Gómez',
     author_email='code@ramiro.org',
-    description='Browse Web service requesrs.',
+    description='Browse Web service requests.',
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",

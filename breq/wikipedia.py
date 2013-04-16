@@ -3,10 +3,10 @@ from breq import Breq
 
 class Wikipedia(Breq):
 
-    def set_next(self, response):
-        self.payload['rvcontinue'] = response['query-continue']['revisions']['rvcontinue']
+    def set_next(self):
+        self.payload['rvcontinue'] = self.response_content['query-continue']['revisions']['rvcontinue']
 
-    def is_last(self, response):
-        if 'query-continue' in response:
+    def is_last(self):
+        if 'query-continue' in self.response_content:
             return False
         return True

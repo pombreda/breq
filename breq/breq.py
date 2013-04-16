@@ -26,6 +26,7 @@ class Breq(object):
         self.request_count = 0
         self.last = False
         self.timeout = timeout
+        self.response = None
 
     def __iter__(self):
         return self
@@ -35,23 +36,24 @@ class Breq(object):
             raise StopIteration
 
         try:
-            resp = requests.get(self.request_uri, params=self.payload)
+            response = requests.get(self.request_uri, params=self.payload)
         except Exception, err:
             print('HTTP request exception: %s\n%r' % self.request_uri, err)
             return
 
-        if not resp.ok:
-            print('HTTP request not ok: %s' % resp.url)
+        if not response.ok:
+            print('HTTP request not ok: %s' % response.url)
             return
 
         self.request_count += 1
+        self.response = response
+        self.response_content = json.loads(response.content)
 
-        response = json.loads(resp.content)
-        if self.is_last(response):
+        if self.is_last():
             self.last = True
         else:
-            self.set_next(response)
+            self.set_next()
             if self.timeout:
                 time.sleep(self.timeout)
 
-        return response
+        return self.response_content

@@ -1,5 +1,5 @@
-local/*
-include/*
+local
+include
 share/*
 
 *.py[cod]

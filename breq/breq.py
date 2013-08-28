@@ -5,7 +5,9 @@ import requests
 import time
 from abc import ABCMeta, abstractmethod
 
+
 class Breq(object):
+
     __metaclass__ = ABCMeta
 
     @abstractmethod
@@ -16,12 +18,17 @@ class Breq(object):
     def is_last(self, response):
         pass
 
-    def __init__(self, request_uri, payload=None, max_requests=None, timeout=None):
+    def __init__(self, request_uri, payload=None, max_requests=None,
+        timeout=None, headers=None):
         self.request_uri = request_uri
         self.max_requests = max_requests
         if payload is None:
             payload = {}
         self.payload = payload
+
+        if headers is None:
+            headers = {}
+        self.headers = headers
 
         self.request_count = 0
         self.last = False
@@ -32,13 +39,15 @@ class Breq(object):
         return self
 
     def next(self):
-        if self.last or (self.max_requests and self.request_count >= self.max_requests):
+        if self.last or (
+            self.max_requests and self.request_count >= self.max_requests):
             raise StopIteration
 
         try:
-            response = requests.get(self.request_uri, params=self.payload)
-        except Exception, err:
-            print('HTTP request exception: %s\n%r' % self.request_uri, err)
+            response = requests.get(self.request_uri, params=self.payload,
+                headers=self.headers)
+        except Exception as err:
+            print('HTTP request exception: %s\n%r' % (self.request_uri, err))
             return
 
         if not response.ok:

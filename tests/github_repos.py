@@ -1,4 +1,7 @@
 # coding: utf-8
+import sys
+sys.path.insert(0, '..')
+
 from breq.github import Github
 url = 'https://api.github.com/users/yaph/repos'
 

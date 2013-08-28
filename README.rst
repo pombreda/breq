@@ -2,6 +2,7 @@ Breq
 ====
 
 A simple library to facilitate browsing/paging through Web service requests.
+For examples on how to use breq check out the tests directory.
 
 Web Services
 ------------

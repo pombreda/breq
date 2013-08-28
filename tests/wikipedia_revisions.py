@@ -1,4 +1,5 @@
 # coding: utf-8
+# Print the last 10 users that edited the Python language page.
 import sys
 sys.path.insert(0, '..')
 
@@ -13,10 +14,8 @@ params = {
 }
 url = 'http://en.wikipedia.org/w/api.php'
 
-# fetch a maximum of 2 pages
-revisions = Wikipedia(url, params, 2)
-for revision in revisions:
-    # do more sensible stuff here
-    pages = revision['query']['pages']
-    for pageid, pagedata in pages.items():
+pages = Wikipedia(url, params, 10)
+for page in pages:
+    rev_pages = page['query']['pages']
+    for pageid, pagedata in rev_pages.items():
         print(pagedata['revisions'][0]['user'])

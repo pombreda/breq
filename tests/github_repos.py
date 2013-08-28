@@ -5,7 +5,8 @@ sys.path.insert(0, '..')
 from breq.github import Github
 url = 'https://api.github.com/users/yaph/repos'
 
-repo_pages = Github(url, {}, 2)
-for repos in repo_pages:
-    for repo in repos:
-        print repo['html_url']
+repos = []
+pages = Github(url, {}, 2)
+for page in pages:
+    for repo in page:
+        repos.append(repo)

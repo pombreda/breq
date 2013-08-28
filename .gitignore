@@ -30,3 +30,6 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+
+# Docs
+docs/_build/

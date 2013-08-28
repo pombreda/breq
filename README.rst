@@ -2,23 +2,9 @@ Breq
 ====
 
 A simple library to facilitate browsing/paging through Web service requests.
-For examples on how to use breq check out the
-`tests directory <https://github.com/yaph/breq/tree/master/tests>`_.
-
-Web Services
-------------
-
-Breq includes basic classes for browsing requests to the following Web services:
-
-* `GitHub API <http://developer.github.com/>`_
-* `Guardian Open Platform <http://www.theguardian.com/open-platform>`_
-* `Reddit API <http://www.reddit.com/dev/api>`_
-* `Wikipedia API <https://www.mediawiki.org/wiki/API:Main_page>`_
-
-TODOs
------
-
-* Documentation with examples
+Breq includes classes for the GitHub, Guardian Open Platform, Reddit and Wikipedia APIs.
+See `the documentation<http://pythonhosted.org/breq/>`_ for examples on how to
+use breq.
 
 Contributing
 ------------

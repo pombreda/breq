@@ -3,7 +3,7 @@ Breq
 
 A simple library to facilitate browsing/paging through Web service requests.
 Breq includes classes for the GitHub, Guardian Open Platform, Reddit and Wikipedia APIs.
-See `the documentation<http://pythonhosted.org/breq/>`_ for examples on how to
+See `the documentation <http://pythonhosted.org/breq/>`_ for examples on how to
 use breq.
 
 Contributing

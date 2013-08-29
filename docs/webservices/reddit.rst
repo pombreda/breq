@@ -14,7 +14,7 @@ Get a list of the top 1000 subreddits by popularity.
     url = 'http://www.reddit.com/reddits/popular.json'
 
     subreddits = []
-    pages = Reddit(url, headers=headers, payload=payload, max_requests=2)
+    pages = Reddit(url, headers=headers, payload=payload, max_requests=10)
     for page in pages:
         for sr in page['data']['children']:
             subreddits.append(sr)

@@ -7,7 +7,9 @@ Breq: Browse requests
 =====================
 
 Breq is a Python library to facilitate browsing/paging through Web service
-requests. See the examples for the supported services on how to use breq.
+requests. See the examples for the supported Web services on how to use breq.
+
+The `source code of breq <https://github.com/yaph/breq>`_ is on GitHub.
 
 Web Services:
 -------------
@@ -15,6 +17,6 @@ Web Services:
 .. toctree::
    :maxdepth: 1
 
-   webservices/reddit
    webservices/github
+   webservices/reddit
    webservices/wikipedia

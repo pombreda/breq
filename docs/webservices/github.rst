@@ -11,11 +11,10 @@ Get a list of all GitHub repositories for a user.
     url = 'https://api.github.com/users/yaph/repos'
 
     repos = []
-    pages = Github(url, {}, 2)
+    pages = Github(url)
     for page in pages:
         for repo in page:
             repos.append(repo)
-
 
 References
 ----------

@@ -14,7 +14,7 @@ params = {
 }
 url = 'http://en.wikipedia.org/w/api.php'
 
-pages = Wikipedia(url, params, 10)
+pages = Wikipedia(url, params, max_requests=2)
 for page in pages:
     rev_pages = page['query']['pages']
     for pageid, pagedata in rev_pages.items():

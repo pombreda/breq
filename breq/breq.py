@@ -11,11 +11,11 @@ class Breq(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def set_next(self, response):
+    def set_next(self):
         pass
 
     @abstractmethod
-    def is_last(self, response):
+    def is_last(self):
         pass
 
     def __init__(self, request_uri, payload=None, max_requests=None,
@@ -47,11 +47,11 @@ class Breq(object):
             response = requests.get(self.request_uri, params=self.payload,
                 headers=self.headers)
         except Exception as err:
-            print('HTTP request exception: %s\n%r' % (self.request_uri, err))
+            print(('HTTP request exception: %s\n%r' % (self.request_uri, err)))
             return
 
         if not response.ok:
-            print('HTTP request not ok: %s' % response.url)
+            print(('HTTP request not ok: %s' % response.url))
             return
 
         self.request_count += 1
